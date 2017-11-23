@@ -1,0 +1,210 @@
+<div class="container-content">
+                    <div class="container-profile">
+                        <div class="container-heading">
+                            PERSONAL INFORMATION
+                        </div>
+                        <div class="container-form form-horizontal">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">First Name:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.firstName" placeholder="Enter your Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Last Name:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.lastName" placeholder="Enter your Last Name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Profile Picture:</label>
+                                        <div class="col-md-8">
+                                            <img  class="thumbnail-image" src="{{user.image}}"
+      onError="this.src='images/icon-user.jpg';"  height="200" width="150" />
+                                        </div>
+                                        <div>
+                                            <input type="file" accept=".jpg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Phone:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Mobile Phone:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.mobile" placeholder="8 digit number">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Email Address:</label>
+                                        <div class="col-md-8">
+                                            <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Your Email Address">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Address:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.address" placeholder="Your Address">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">City:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.city" placeholder="Your City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Zip code:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" [(ngModel)]="user.zipCode" placeholder="Enter Your Zip Code (5 digits)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="col-md-4 col-lg-2 control-label">About Me:</label>
+                                        <div class="col-md-8 col-lg-10">
+                                            <textarea class="form-control" [(ngModel)]="user.aboutMe" placeholder="Write your Bio here ... "></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container-button">
+                                <button (click)="updateUserInfo()">Save changes</button>
+                            </div>
+                            <div *ngIf="model.success_personal" class="success-msg">
+                                {{ model.success_personal }}
+                            </div>
+
+                            <div *ngIf="model.error_personal" class="err-msg">
+                                {{ model.error_personal }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-profile">
+                        <div class="container-heading">
+                            MY SOCIAL NETWORK
+                        </div>
+                        <div class="container-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group bordered">
+                                        <div class="icon">
+                                            <img src="images/icon-facebook.png" alt="">
+                                        </div>
+                                        <input type="text" class="form-control" [(ngModel)]="user.facebook" placeholder="Enter Link to your Profile">
+                                    </div>
+                                    <div class="form-group bordered">
+                                        <div class="icon">
+                                            <img src="images/icon-twitter.png" alt="">
+                                        </div>
+                                        <input type="text" class="form-control" [(ngModel)]="user.twitter" placeholder="Enter Link to your Profile">
+                                    </div>
+                                    <div class="form-group bordered">
+                                        <div class="icon">
+                                            <img src="images/icon-gplus.png" alt="">
+                                        </div>
+                                        <input type="text" class="form-control" [(ngModel)]="user.googlePlus" placeholder="Enter Link to your Profile">
+                                    </div>
+                                    <div class="form-group bordered">
+                                        <div class="icon">
+                                            <img src="images/icon-linkedin.png" alt="">
+                                        </div>
+                                        <input type="text" class="form-control" [(ngModel)]="user.linkedin" placeholder="Enter Link to your Profile">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-button">
+                                <button (click)="updateSocialInfo()">Save changes</button>
+                            </div>
+                            <div *ngIf="model.success_social" class="success-msg">
+                                {{ model.success_social }}
+                            </div>
+
+                            <div *ngIf="model.error_social" class="err-msg">
+                                {{ model.error_social }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-profile">
+                        <div class="container-heading">
+                            CHANGE YOUR PASSWORD
+                        </div>
+                        <div class="container-form">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">New Password:</label>
+                                        <div>
+                                            <input type="password" [(ngModel)]="user.password" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Confirm New Password:</label>
+                                        <div>
+                                            <input type="password" [(ngModel)]="user.confirmPassword" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div *ngIf="model.success_password" class="success-msg">
+                                        {{ model.success_password }}
+                                    </div>
+
+                                    <div *ngIf="model.error_password" class="err-msg">
+                                        {{ model.error_password }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="container-hint clearfix">
+                                        <b>Hint:</b> <br /> Be careful. After you change the password, the password is automatically
+                                        applied.<br /><br /> If you don't have a current password you can sign out and reset
+                                        your password at sign in page.
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="container-change">
+                                        <button (click)="updateNewPassword()">Change</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

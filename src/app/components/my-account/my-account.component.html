@@ -1,0 +1,27 @@
+
+<body>
+    <header-banner></header-banner>
+    <div id="page-my-account" class="block-my-account">
+    <div id="page-content">
+        <div class="container">
+            <div class="container-header">
+                My Account
+            </div>
+            <div class="clearfix">
+                <div class="container-sidebar">
+                    <div [ngClass]="isSet(0) ? 'item active' : 'item'" (click)="setTab(0)">Profile</div>
+                    <div [ngClass]="isSet(1) ? 'item active' : 'item'" (click)="setTab(1)">FAQ</div>
+                    <div [ngClass]="isSet(2) ? 'item active' : 'item'" (click)="setTab(2)">How to Play</div>
+                    <div [ngClass]="isSet(3) ? 'item active' : 'item'" (click)="setTab(3)">Help</div>
+                </div>
+                
+                <profile     *ngIf="isSet(0)"></profile>
+                <faq         *ngIf="isSet(1)"></faq>
+                <how-to-play *ngIf="isSet(2)"></how-to-play>
+                <help        *ngIf="isSet(3)"></help>
+            </div>
+        </div>
+    </div>
+</div>
+<footer-banner></footer-banner>
+</body>

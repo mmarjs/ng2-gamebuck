@@ -1,0 +1,30 @@
+<div class="ml-content" id="modal-login">
+			<div class="section-container">
+				<div id="login" class="modal-login-content" style="display: block;">
+
+					<button type="button" class="ml-close" data-dismiss="ml-modal" aria-hidden="true">×</button>
+					<h2>Sign in to your account:</h2>
+
+					<p class="mluser">
+						<label class="field-titles" for="login_user">Username</label>
+						<input type="text" [(ngModel)]="model.username" class="input" size="20">
+					</p>
+
+					<p class="mlpsw">
+						<label class="field-titles" for="login_pass">Password</label>
+						<input type="password" [(ngModel)]="model.password" class="input" size="20">
+					</p>
+
+					<p class="submit" style="margin-top: 15px">
+						<button class="button button-primary button-large" (click)="login()">Log In</button>
+					</p>
+					<p class="err-msg" *ngIf="model.err_msg">
+						{{model.err_msg}}
+					</p>
+
+					<div *ngIf="model.success_msg" class="success-msg">
+						{{ model.success_msg }}
+					</div>
+				</div>
+			</div>
+		</div>

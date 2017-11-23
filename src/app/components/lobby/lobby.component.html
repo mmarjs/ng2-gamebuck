@@ -1,0 +1,47 @@
+<body>
+    <div id="main">
+        <header-banner></header-banner>
+        <div id="subnav-display">
+            <div class="container">
+                <div id="subnav-display-left">
+                    <div id="subnav-sort">
+                        <label>Contest Type:</label>
+                        <select>
+                            <option>Featured Contests</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="subnav-display-center">
+                    <div id="subnav-next">NEXT CONTEST: <span>1:45:30:00</span></div>
+                </div>
+                <div id="subnav-display-right">
+                    <div id="subnav-view">
+                        <label>View mode:</label>
+                        <div id="subnav-view1"></div>
+                        <div id="subnav-view2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-my-contests">
+            <div id="page-content">
+                <div class="container">
+                    <div *ngFor="let contest of contests" class="buckin-box">
+                        <h2> {{contest.description}}</h2>
+                            <div class="central">
+                                <h3>{{contest.name}} </h3>
+                                <div class="price"> {{contest.entryFee}} </div>
+                                <div class="value"> <span>{{contest.numOfEntries}}</span>/{{contest.size}} </div>
+                            </div>
+
+                            <div class="bg-blck">
+                                <div class="total"> TOTAL PRIZES: ${{contest.payout}}</div>
+                                <button class="btn btn-primary" type="button" (click)="register(contest.uuid)">BUCKIN PLAY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer-banner></footer-banner>
+</body>

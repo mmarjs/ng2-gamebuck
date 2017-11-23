@@ -1,0 +1,69 @@
+  <body class="home">
+<div id="page">
+        <header id="masthead" role="banner">
+            
+            <div id="mobile-navigation" class="nav-collapse collapse" aria-expanded="true">
+                <div class="menu-mobile-container">
+                    <ul id="menu-mobile" class="nav">
+                        <li class="menu-item">
+                            <a href="#/">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/lobby/">Lobby</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/line-up/">Line Up</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/my-contests/">My Contests</a>
+                        </li>   
+                        <li class="menu-item">
+                            <a href="#/faq/">FAQ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#/how-to-play/">How to Play</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#modal-register" data-toggle="ml-modal">Sign Up</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#modal-login" data-toggle="ml-modal">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="header-branding" style="background:url('images/banner-home.jpg') top center no-repeat; background-size:cover;">
+                <div class="container"> 
+                    <div id="header-account" class="hidden-xs">
+                        <div id="nav_menu-8" class="widget widget_nav_menu">
+                            <div class="menu-top-container">
+                                <ul id="menu-top" class="menu">
+                                    <li class="nav-signup menu-item menu-item-type-custom menu-item-object-custom" (click)="showRegisterComponent()">
+                                        <a>Register</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom" (click)="showLoginComponent()">
+                                        <a >Login</a>
+                                    </li>
+                                </ul>
+                                <ul id="menu-top" class="menu" *ngIf="loggedIn">
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom" ng-click="logout()">
+                                        <a href="">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="logo">
+                        <img src="images/logo-1.png" />
+                    </div>
+
+                    <h1 id="tagline">Just Buckin' Play</h1>
+                    <a href="#/register/" data-toggle="ml-modal" class="button">Join Now</a>
+                 </div>
+            </div>
+        </header>
+
+       <footer-banner></footer-banner>
+    </div>
+  </body>

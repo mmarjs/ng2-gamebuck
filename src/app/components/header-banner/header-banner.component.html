@@ -1,0 +1,153 @@
+<header id="masthead" role="banner" > 
+                
+
+                <div id="mobile-navigation" class="nav-collapse collapse" aria-expanded="true">
+                    <div class="menu-mobile-container">
+                        <ul id="menu-mobile" class="nav">
+                            <li class="menu-item">
+                                <a href="#/">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/my-contests" routerLinkActive="active" >My Contests</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#/lobby">Lobby</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/my-lineups" routerLinkActive="active">My Line ups</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/strategy" routerLinkActive="active">Strategy</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/my-account/profile" routerLinkActive="active">Profile</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/my-account/faq" routerLinkActive="active">FAQ</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/my-account/how-to-play" routerLinkActive="active">How to Play</a>
+                            </li>
+                            <li class="menu-item">
+                                <a routerLink="/my-account/help" routerLinkActive="active">Help</a>
+                            </li>
+                            <li class="menu-item">
+                                <a>Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="header-branding">
+                    <div class="container">
+                        <div id="header-left">
+                            <div id="header-account-nav">
+                                <ul>
+                                    <li>
+                                        <a routerLink="/my-contests" routerLinkActive="active">
+                                            My Contests
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/my-lineups" routerLinkActive="active">
+                                            My Lineups
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a routerLink="/strategy" routerLinkActive="active">
+                                            Strategy
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="header-user">
+                                <img src="{{imageUrl}}"
+      onError="this.src='images/icon-user.jpg';"  height="105" width="99" />
+                                <div id="header-user-info">
+                                    <div id="header-user-name">{{userName}}</div>
+                                    <div id="header-user-balance">Balance $0.00</div>
+                                </div>
+                                <div id="header-user-subnav">
+                                    <h3>My Account</h3>
+                                    <ul>
+                                        <li>
+                                            <a routerLink="/my-contests" routerLinkActive="active">
+                                                My Contests
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/my-lineups" routerLinkActive="active">
+                                                My Line ups
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/strategy" routerLinkActive="active">
+                                                Strategy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/my-account/profile" routerLinkActive="active">
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/my-account/faq" routerLinkActive="active">
+                                                FAQ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/my-account/how-to-play" routerLinkActive="active">
+                                                How to Play
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/my-account/help" routerLinkActive="active">
+                                                Help
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a (click)="signOut()">
+                                                Sign Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/lobby" id="logo">
+                            <img src="images/logo-header.png" />
+                        </a>
+                        <div id="header-right">
+                            <a routerLink="/add-bucks" routerLinkActive="active" id="header-add-bucks">
+                                <span>Add Bucks</span>
+                            </a>
+                            <div id="header-icons">
+                                <a>
+                                    <img src="images/icon-football.png" />
+                                </a>
+                                <a>
+                                    <img src="images/icon-basketball.png" />
+                                </a> 
+                                <a>
+                                    <img src="images/icon-baseball.png" />
+                                </a>
+                                <a>
+                                    <img src="images/icon-hockey.png" />
+                                </a>
+                                <a>
+                                    <img src="images/icon-soccer.png" />
+                                </a>
+                                <a>
+                                    <img src="images/icon-golf.png" />
+                                </a>
+                                <a>
+                                    <img src="images/icon-flags.png" />
+                                </a>
+                                <a>
+                                    <img src="images/icon-rink.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>

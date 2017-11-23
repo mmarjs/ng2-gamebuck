@@ -1,0 +1,117 @@
+<body>
+    <header-banner></header-banner>
+    <div id="subnav-contest">
+        <div class="container">
+            <div id="subnav-contest-left">
+                <a routerLink="/create-contest" routerLinkActive="active" id="subnav-create">Create a Contest</a>
+                <a routerLink="/lineup/new" routerLinkActive="active" id="subnav-lineup">Create a Lineup</a>
+            </div>
+            <div id="subnav-contest-right">
+                <form id="subnav-search">
+                    <input type="text" value="Search Contests.." />
+                </form>
+                <div id="subnav-entry">
+                    <label>Entry fee</label>
+                    <select>
+                    <option>Free</option>
+                </select>
+                    <select>
+                    <option>$1000</option>
+                </select>
+                </div>
+                <div id="subnav-starting">
+                    <label>Starting Time</label>
+                    <select>
+                    <option>Sun 10/16 9:00AM</option>
+                </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="subnav-display">
+        <div class="container">
+            <div id="subnav-display-left">
+                <div id="subnav-group">
+                    <label>Group by:</label>
+                    <select>
+                                    <option>Contest</option>
+                                </select>
+                </div>
+                <div id="subnav-sort">
+                    <label>Sort by:</label>
+                    <select>
+                                    <option>Winning</option>
+                                </select>
+                </div>
+            </div>
+            <div id="subnav-display-center">
+                <div id="subnav-next">NEXT CONTEST: <span>1:45:30:00</span></div>
+            </div>
+            <div id="subnav-display-right">
+                <div id="subnav-view">
+                    <label>View mode:</label>
+                    <div id="subnav-view1"></div>
+                    <div id="subnav-view2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page-my-contests">
+        <div id="page-content">
+            <div class="container">
+                <div *ngFor="let contest of contests" class="buckin-box" class="play-container">
+                    <div class="description col-md-12" align="center">
+                        <h3 class="play-title">{{contest.name}} </h3>
+                        <h3 class="fee"> ENTRY FEE: $contest.entryFee</h3>
+                        <h3 class="timing"> {{contest.description}} </h3>
+                    </div>
+                    <div class="rank col-md-12" align="center">
+                        <div class="col-md-3">
+                            <h4> Rank </h4>
+                            <h4> 500 </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4> Winning </h4>
+                            <h4> 0 </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4> Point </h4>
+                            <h4> 25 </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4> Minute </h4>
+                            <h4> 120 </h4>
+                        </div>
+                    </div>
+                    <div class="rank col-md-12" align="center">
+                        <div class="col-md-3">
+                            <h4> Rank </h4>
+                            <h4> 500 </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4> Winning </h4>
+                            <h4> 0 </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4> Point </h4>
+                            <h4> 25 </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4> Minute </h4>
+                            <h4> 120 </h4>
+                        </div>
+                    </div>
+                    <div class="price-point" align="center">
+                        <div class="col-md-6 top-price">
+                            <h4> Top Price: $25000 </h4>
+                        </div>
+                        <div class="col-md-6 points-to-1st">
+                            <h4> Points to 1st: 125 </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-banner></footer-banner>
+</body>

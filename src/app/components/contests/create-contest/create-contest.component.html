@@ -1,0 +1,138 @@
+<body>
+    <header-banner></header-banner>
+<div id="subnav-contest">
+	<div class="container">
+    	<a routerLink="/create-contest" routerLinkActive="active" id="subnav-create">Create a Contest</a>
+        <a routerLink="/lineup/new" routerLinkActive="active" id="subnav-lineup">Create a Lineup</a>
+    </div>
+</div>
+<div id="page-create-contest">
+    <div id="page-content">
+        <div class="container">
+        
+        	<h2>Create a Contest</h2>
+                            
+            <div class="filed">
+                <h3> Sport </h3>
+                <div class="field-box">
+                    <a>
+                        <img src="images/icon-football.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-basketball.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-baseball.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-hockey2.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-soccer.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-golf.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-flags.png" />
+                    </a>
+                    <a>
+                        <img src="images/icon-rink.png" />
+                    </a>
+                </div>
+            </div>
+            
+            <div class="filed">
+                <h3> Date </h3>
+                <div class="field-box for-images">
+                    <select >
+                        <option *ngFor="let dateTmp of dates" (click)="dateValue=dateTmp">{{dateTmp}}</option>
+                    </select>
+                    <select >
+                        <option *ngFor="let incl of includeGames" (click)="includeValue=incl">{{incl}}</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="contest-box">
+                <h3> Contest Type </h3>
+                <div class="field-box2">
+                    <div [ngClass]="{'active-button':contest.type=='H2H'}" (click)="contest.type='H2H'">
+                        <a>
+                            <button> H2H </button>
+                        </a>
+                    </div>
+                    <div  [ngClass]="{'active-button':contest.type=='3To20'}" (click)="contest.type='3To20';contest.size='20';">
+                        <a>
+                            <button> 3 to 20 Players </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component-box">
+                <h3> Opponent </h3>
+                <div class="field-box2">
+                    <div [ngClass]="{'active-button':contest.opponent=='Anyone'}" (click)="contest.opponent='Anyone'">
+                        <a>
+                            <button> Anyone </button>
+                        </a>
+                    </div>
+                    <div [ngClass]="{'active-button':contest.opponent=='Friends Only'}" (click)="contest.opponent='Friends Only'">
+                        <a>
+                            <button> Friends Only </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field-box">
+                <div class="price-area">
+                    <h2>
+                        $10
+                    </h2>
+                    <a  class="btn btn-default" (click)="contest.entryFee='10'">Select</a>
+                </div>
+                <div class="price-area">
+                    <h2>
+                        $25
+                    </h2>
+                    <a  class="btn btn-default" (click)="contest.entryFee='25'">Select</a>
+                </div>
+                 <div class="price-area">
+                    <h2>
+                        $100
+                    </h2>
+                    <a  class="btn btn-default" (click)="contest.entryFee='100'">Select</a>
+                </div>
+                 <div class="price-area">
+                    <h2>
+                        $200
+                    </h2>
+                    <a class="btn btn-default active" (click)="contest.entryFee='200'">Select</a>
+                </div>
+                 <div class="price-area">
+                    <h4>
+                        custom
+                    </h4>
+                    <input type="text" class="form-control input-field" [(ngModel)]="contest.entryFee">
+                    <h6>Enter your own<br /> dollar amount</h6>
+                    <a class="btn btn-default">Select</a>
+                </div>
+            </div>
+            <!-- todo_hariso fix this-->
+            <div style="float: right">
+                <a  class="button-next" (click)="createContest()">Create &gt;</a>
+                
+                <div *ngIf="model.success_msg" class="success-msg">
+                    {{ model.success_msg }}
+                </div>
+                <div *ngIf="model.error_msg" class="err-msg">
+                    {{ model.error_msg }}
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<footer-banner></footer-banner>
+</body>
